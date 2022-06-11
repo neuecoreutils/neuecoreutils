@@ -6,6 +6,7 @@
 import os
 import subprocess
 import sys
+import json
 
 prefix = "/usr"
 
@@ -22,6 +23,10 @@ Target = [
 #    "touch",
     "uname",
     "whoami"]
+
+
+
+
 
 def Clean():
     os.system("rm -r -f ./Binaries")
@@ -86,6 +91,9 @@ elif ac == 2 and av[1] == "install":
     Install()
 elif ac == 2 and av[1] == "checks":
     Checks()
+elif ac == 2 and av[1] == "targinfo":
+    GetTargetInfo()
+
 else:
     print("""
 Usage:
