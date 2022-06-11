@@ -2,6 +2,7 @@
 
 # nc.tool - compile, clean, or install neuecoreutils.
 # Part of the neuecoreutils project.
+
 import os
 import subprocess
 import sys
@@ -32,8 +33,8 @@ print("Cleanup successful.")
 
 def Compile():
     print("[*] Compiling neueCoreutils.")
-    os.mkdir("./Binaries")
-
+    if os.path.isdir("./Binaries") == False:
+        os.mkdir("./Binaries")
     for t in Target:
         os.system('echo "Working on directory: $PWD"')
         os.chdir("./{}".format(t))
