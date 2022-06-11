@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # nc.tool - compile, clean, or install neuecoreutils.
-
+# Part of the neuecoreutils project.
 import os
 import subprocess
 import sys
