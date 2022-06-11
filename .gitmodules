@@ -1,0 +1,18 @@
+[submodule "uname"]
+	path = uname
+	url = https://github.com/neuecoreutils/uname
+[submodule "whoami"]
+	path = whoami
+	url = https://github.com/neuecoreutils/whoami
+[submodule "file"]
+	path = file
+	url = https://github.com/neuecoreutils/file
+[submodule "cp"]
+	path = cp
+	url = https://github.com/neuecoreutils/cp
+[submodule "cat"]
+	path = cat
+	url = https://github.com/neuecoreutils/cat
+[submodule "dd"]
+	path = dd
+	url = https://github.com/neuecoreutils/dd
