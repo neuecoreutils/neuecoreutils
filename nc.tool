@@ -11,12 +11,14 @@ prefix = "/usr"
 Target = [
     "cat",
     "cp",
-    "ln",
-    "ls",
-    "mkdir",
-    "mv",
-    "rm",
-    "touch",
+    "dd",
+    "file",
+#    "ln",
+#    "ls",
+#    "mkdir",
+#    "mv",
+#    "rm",
+#    "touch",
     "uname",
     "whoami"]
 
@@ -30,7 +32,6 @@ print("Cleanup successful.")
 
 def Compile():
     print("[*] Compiling neueCoreutils.")
-    os.rmdir("./Binaries")
     os.mkdir("./Binaries")
 
     for t in Target:
