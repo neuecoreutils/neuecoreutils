@@ -6,7 +6,6 @@
 import os
 import subprocess
 import sys
-import json
 
 prefix = "/usr"
 
@@ -24,9 +23,7 @@ Target = [
     "uname",
     "whoami"]
 
-
-
-
+bindir = subprocess.getoutput("swift build --show-bin-path")
 
 def Clean():
     os.system("rm -r -f ./Binaries")
@@ -46,13 +43,13 @@ def Compile():
         print("[] changed directory to {}".format(t))
         os.system("swift build >/dev/null 2>&1")
         print("[] building {}".format(t))
-        os.chdir(".build/debug")
-        print("[] changed directory to .build/debug")
+        os.chdir(bindir)
+        print("[] changed directory to {}".format(bindir))
 
-        os.system("cp -rf {} ../../../../Binaries >/dev/null 2>&1".format(t))
+        os.system("cp -rf {} ../../../../../Binaries >/dev/null 2>&1".format(t))
         print("[] copying file to Binaries")
         print("[+] Compiled {}".format(t))
-        os.chdir("../../../../")
+        os.chdir("../../../../../")
 
     print("[*] Compiled neueCoreutils.")
     exit(0)
@@ -91,9 +88,6 @@ elif ac == 2 and av[1] == "install":
     Install()
 elif ac == 2 and av[1] == "checks":
     Checks()
-elif ac == 2 and av[1] == "targinfo":
-    GetTargetInfo()
-
 else:
     print("""
 Usage:
@@ -103,4 +97,3 @@ Usage:
     {} install
     """.format(av[0], av[0], av[0], av[0]))
     exit(1)
-
